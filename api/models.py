@@ -23,7 +23,7 @@ class CallerUserManager(UserManager):
 class User(AbstractUser):
     email = models.EmailField(null=True)
     username = models.CharField(max_length=150, null=True)
-    phone_number = models.IntegerField(
+    phone_number = models.PositiveBigIntegerField(
         unique=True, help_text="unique number for a user to register"
     )
     name = models.CharField(max_length=100)
@@ -53,7 +53,7 @@ class Contact(models.Model):
     )
     name = models.CharField(max_length=100, help_text="Name of the contact person")
     # username = models.CharField(max_length=100)
-    number = models.PositiveIntegerField()
+    number = models.PositiveBigIntegerField()
     email = models.EmailField(null=True, blank=True)
 
     is_spam = models.BooleanField(default=False)
@@ -87,7 +87,7 @@ class UserContact(models.Model):
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    phone_number = models.PositiveIntegerField(unique=True)
+    phone_number = models.PositiveBigIntegerField(unique=True)
     email = models.EmailField(null=True, blank=True)
     name = models.CharField(max_length=100)
     is_spam = models.BooleanField(default=False)
