@@ -1,5 +1,8 @@
 # truecaller
+# Prerequisites
+    1. Python 3.8+
+    2. Postgresql
 
-# run `pip install -r requirements.txt` to install all dependent modules
+* Run `pip install -r requirements.txt` to install all dependent modules
 
-# to populate database with some dummy data run command `python manage.py load_users`
+* To populate database with some dummy data run command `python manage.py load_users`
